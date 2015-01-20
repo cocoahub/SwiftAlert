@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIAlertViewDelegate {
 
+	//var lol : SwiftAlert!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +23,17 @@ class ViewController: UIViewController {
 	}
 
 
+	@IBAction func buttonPressed(sender: UIButton) {
+		
+		SwiftAlert(showWithActionClosure: { (buttonIndex) -> Void in
+			println("\(buttonIndex)")
+		}, title: "hejsa", message: "sups", cancelButtonTitle: "sdj")
+
+		
+	}
+
+
+	
+	
 }
 

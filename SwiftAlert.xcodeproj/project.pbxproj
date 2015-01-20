@@ -13,6 +13,7 @@
 		C3CF571B1A6EDFC40035AA57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3CF571A1A6EDFC40035AA57 /* Images.xcassets */; };
 		C3CF571E1A6EDFC40035AA57 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CF571C1A6EDFC40035AA57 /* LaunchScreen.xib */; };
 		C3CF572A1A6EDFC50035AA57 /* SwiftAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF57291A6EDFC50035AA57 /* SwiftAlertTests.swift */; };
+		C3CF57341A6EE0FD0035AA57 /* SwiftAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CF57331A6EE0FD0035AA57 /* SwiftAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C3CF57231A6EDFC50035AA57 /* SwiftAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3CF57281A6EDFC50035AA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3CF57291A6EDFC50035AA57 /* SwiftAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAlertTests.swift; sourceTree = "<group>"; };
+		C3CF57331A6EE0FD0035AA57 /* SwiftAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C3CF57131A6EDFC40035AA57 /* AppDelegate.swift */,
 				C3CF57151A6EDFC40035AA57 /* ViewController.swift */,
 				C3CF57171A6EDFC40035AA57 /* Main.storyboard */,
+				C3CF57331A6EE0FD0035AA57 /* SwiftAlert.swift */,
 				C3CF571A1A6EDFC40035AA57 /* Images.xcassets */,
 				C3CF571C1A6EDFC40035AA57 /* LaunchScreen.xib */,
 				C3CF57111A6EDFC40035AA57 /* Supporting Files */,
@@ -214,6 +217,7 @@
 			files = (
 				C3CF57161A6EDFC40035AA57 /* ViewController.swift in Sources */,
 				C3CF57141A6EDFC40035AA57 /* AppDelegate.swift in Sources */,
+				C3CF57341A6EE0FD0035AA57 /* SwiftAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
