@@ -6,8 +6,8 @@ From [this](http://www.cocoahub.io/swift/uialertview-with-blocks-in-swift/) blog
 #Usage
 Import <code>SwiftAlert.swift</code> into your Xcode project. <br>
 Then show the alert view
-<code>
-SwiftAlert(showWithActionClosure: { (buttonIndex) -> Void in <br>
-			println("Button number \(buttonIndex) pressed") <br>
-			}, title: "Alert", message: "Alert message", cancelButtonTitle: "Cancel",otherButtonTitle:"Ok")<br>
-</code>
+```swift
+SwiftAlert(showWithActionClosure: { (buttonIndex) -> Void in
+			println("Button number \(buttonIndex) pressed") 
+			}, title: "Alert", message: "Alert message", cancelButtonTitle: "Cancel",otherButtonTitle:"Ok")
+```
