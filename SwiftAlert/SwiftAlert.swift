@@ -3,68 +3,34 @@
 //  SwiftAlert
 //
 //  Created by Anton Schmidt Gregersen on 20/01/15.
-//  Copyright (c) 2015 Anton Schmidt Gregersen. All rights reserved.
+//  Copyright (c) 2015 cocoahub.io All rights reserved.
 //
 
 import UIKit
 
-class SwiftAlert: UIAlertView, UIAlertViewDelegate {
-
-	private var cancelBlock : ((Int) -> (Void))?
+class SwiftAlert: NSObject, UIAlertViewDelegate {
 	
-	init(showWithActionClosure closure:(buttonIndex:Int) -> Void, title: String?, message: String?, cancelButtonTitle: String?, otherButtonTitle:String?...) {
+	private var callBack : ((Int) -> (Void))
+	private let unmanaged : Unmanaged<NSObject>?
+	
+	 init(showWithActionClosure closure:(buttonIndex:Int) -> Void, title: String?, message: String?, cancelButtonTitle: String?, otherButtonTitle:String?...) {
+		self.callBack = closure
+		super.init() // To set the delegate as self we need to call its super.init() first.
+		var alert = UIAlertView(title: title, message: message, delegate: self, cancelButtonTitle: cancelButtonTitle)
 		
-		
-		super.init(title: title, message: message, delegate: nil, cancelButtonTitle: cancelButtonTitle)
-		
-		// unwrap otherButtonTitle
+		//Add buttons from otherButtonTitle
 		for (index, title) in enumerate(otherButtonTitle) {
-			self.addButtonWithTitle(title!)
+			alert.addButtonWithTitle(title!)
 		}
+
+		self.unmanaged = Unmanaged.passRetained(self)
 		
-		self.delegate = self
-		self.show(block: closure)
-		
+		alert.show()
 	}
 	
-	required init(coder aDecoder: NSCoder) {
-	    fatalError("init(coder:) has not been implemented")
+	internal func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+		self.callBack(buttonIndex)
+		self.unmanaged?.release()
 	}
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-	}
-	
-	
-	// Looks up in the documentation for UIAlertViewDelegate what methods are REQUIRED.
-	
-	func alertViewCancel(alertView: UIAlertView) {
-		
-		
-	}
-	
-	func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
-		
-	}
-	
-	func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-		self.cancelBlock!(buttonIndex)
-	}
-	
-	
-	func show(#block: (buttonIndex:Int) -> Void) {
-		
-		self.cancelBlock = block;
-		
-		super.show()
-	}
-	
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

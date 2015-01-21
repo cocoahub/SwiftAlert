@@ -3,14 +3,13 @@
 //  SwiftAlert
 //
 //  Created by Anton Schmidt Gregersen on 20/01/15.
-//  Copyright (c) 2015 Anton Schmidt Gregersen. All rights reserved.
+//  Copyright (c) 2015 cocoahub.io All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UIAlertViewDelegate {
+class ViewController: UIViewController {
 
-	//var lol : SwiftAlert!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,15 +24,12 @@ class ViewController: UIViewController, UIAlertViewDelegate {
 
 	@IBAction func buttonPressed(sender: UIButton) {
 		
-		SwiftAlert(showWithActionClosure: { (buttonIndex) -> Void in
-			println("\(buttonIndex)")
-		}, title: "hejsa", message: "sups", cancelButtonTitle: "sdj")
-
 		
+		SwiftAlert(showWithActionClosure: { (buttonIndex) -> Void in
+			println("Button number \(buttonIndex) pressed")
+			}, title: "Alert", message: "Alert message", cancelButtonTitle: "Cancel",otherButtonTitle:"Ok")
+
 	}
 
-
-	
-	
 }
 
